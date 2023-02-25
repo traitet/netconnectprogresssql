@@ -21,7 +21,8 @@ namespace aiapinv01.Pages
         {
             SampleData = new List<SampleDatatest>();
 
-            var connString = "Server=localhost;Port=5432;Database=aiap;User Id=postgres;Password=aiap@2023;";
+            //var connString = "Server=localhost;Port=5432;Database=aiap;User Id=postgres;Password=aiap@2023;";
+            var connString = "Server=test-investmentdb.postgres.database.azure.com;Port=5432;Database=aiap;User Id=dbadmin;Password=aiap@2023;SslMode=Require;";
             await using var connection = new NpgsqlConnection(connString);
             await connection.OpenAsync();
 
