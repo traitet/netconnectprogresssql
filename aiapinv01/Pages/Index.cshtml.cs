@@ -23,7 +23,7 @@ namespace aiapinv01.Pages
             // test commit 1:54
             //var connString = "Server=localhost;Port=5432;Database=postgres;User Id=dbadmin;Password=aiap@2023;";
             //var connString = "Server=localhost;Port=5432;Database=aiap;User Id=postgres;Password=aiap@2023;";
-            var connString = "Server=test-investmentdb.postgres.database.azure.com;Port=5432;Database=aiap;User Id=dbadmin;Password=aiap@2023;SslMode=Require;";
+            var connString = "Server=test-investmentdb.postgres.database.azure.com;Port=5432;Database=aiap;User Id=dbadmin;Password=aiap@2023;SslMode=VerifyCA;";
             //var connString = "Server=test-investmentdb.postgres.database.azure.com;Port=5432;Database=postgres;User Id=dbadmin@Server=test-investmentdb.postgres.database.azure.com;Password=aiap@2023;SslMode=VerifyFull;";
             await using var connection = new NpgsqlConnection(connString);
             await connection.OpenAsync();
