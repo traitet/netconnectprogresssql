@@ -27,8 +27,8 @@ namespace aiapinv01.Pages
             //var connString = "Server=test-investmentdb.postgres.database.azure.com;Port=5432;Database=postgres;User Id=dbadmin@Server=test-investmentdb.postgres.database.azure.com;Password=aiap@2023;SslMode=VerifyFull;";
             await using var connection = new NpgsqlConnection(connString);
             await connection.OpenAsync();
-            //await using var command = new NpgsqlCommand("select *, CURRENT_TIME as CTime from myTable", connection);
-            await using var command = new NpgsqlCommand("SELECT 1 as id, 'abc' as Name, 'desc' as description, to_char(CURRENT_TIME::time without time zone, 'HH:MI:SS.US') as CTime", connection);
+            await using var command = new NpgsqlCommand("select *, CURRENT_TIME as CTime from myTable", connection);
+            //await using var command = new NpgsqlCommand("SELECT 1 as id, 'abc' as Name, 'desc' as description, to_char(CURRENT_TIME::time without time zone, 'HH:MI:SS.US') as CTime", connection);
             await using var reader = await command.ExecuteReaderAsync();
 
             while (await reader.ReadAsync())
